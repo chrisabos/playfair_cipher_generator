@@ -22,6 +22,19 @@ void rand_word(FILE *fp, char* word, int max)
 	}
 }
 
+//fixes the message by adding an x inbetween any double letters in the same 2 letter block
+void fix_message(char* message, int size)
+{
+	int i;
+
+	for(i = 0; i < size; i++)
+	{
+		printf("%s %d", message, size);
+	}
+
+
+}
+
 void print_cipher_array(char ca[5][5])
 {
 	int x, y;
@@ -70,6 +83,10 @@ int main()
 	rand_word(fp, word_key, fp_line_count);
 	printf("msg: %s", word_message);
 	printf("key: %s", word_key);
+
+	fix_message(word_message, sizeof(word_message));
+
+	printf("fixed msg: %s", word_message);
 
 	print_cipher_array(cipher_array);
 	//printf("%s\n", &rand_word);
